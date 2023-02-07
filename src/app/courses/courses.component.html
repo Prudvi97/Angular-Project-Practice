@@ -1,0 +1,39 @@
+<!--string interpolation syntax is used to display data used were we want to render text like h2,span,div,p -->
+<!-- Angular transalates interpolation into property binding -->
+<!-- <h2>{{ title }}</h2> -->
+<!-- property binding for h2 example-->
+<!-- <h2 [textContent]="title"></h2> -->
+<!-- <img src = "{{ imageUrl }}" /> -->
+<!-- property binding we bind property of a DOM element like src here to fill the property in our component -->
+<!-- <img [src] = "imageUrl" /> -->
+
+<!-- Attribute binding example -->
+<!-- <table>
+    <tr>
+        <td [attr.colspan]="colspan"></td>
+    </tr>
+</table> -->
+
+<!-- Bootstrap binding example & Class binding -->
+<!-- <button class="btn btn-primary" [class.active]="isActive">Save</button> -->
+
+<!-- Style binding example -->
+<!-- <button [style.backgroundcolor]="isActive ? 'blue' : 'black'">Save</button> -->
+
+<!-- Event binding example -->
+<!-- <button (click)="onSave($event)">Save</button> -->
+
+<!-- event filtering example -->
+<!-- <input (keyup.enter)="onKeyUp()"> -->
+<!-- template variables - declaring the variable to render the input value-->
+<!-- <input #email (keyup.enter)="onKeyUp(email.value)" /> -->
+
+<!-- Two way binding example -->
+<!-- <input [(ngModel)]="email" (keyup.enter)="onKeyUp()" /> <br/> -->
+
+<!-- Pipes example -->
+<!-- {{ pipes.title | uppercase | lowercase }} <br/>
+{{ pipes.students | number }} <br/>
+{{ pipes.rating | number:'2.1-1' }} <br/>
+{{ pipes.price | currency:'AUD':true:'3.2-2' }} <br/>
+{{ pipes.releaseDate | date:'shortDate' }} -->
