@@ -1,1 +1,68 @@
-<app-courses></app-courses>
+<!-- <app-courses></app-courses> -->
+<!-- <like [likesCount]="tweet.likesCount"
+      [isActive]="tweet.isLiked">
+</like> -->
+
+<!-- Directives Examples -->
+<!-- If we want to display list or remove list example using ngIf -->
+<!-- <div *ngIf="courses.length > 0; then courseList else noCourses"></div>
+<ng-template #courseList>
+    List of courses
+</ng-template>
+<ng-template #noCourses>
+    No courses yet
+</ng-template> -->
+
+<!-- Hidden Property List -->
+<!-- If we don't have any courses we need to hide first div -->
+<!-- <div [hidden]="courses.length == 0">
+    List of courses
+</div> -->
+<!-- If we have more than one course we need to hide this div -->
+<!-- <div [hidden]="courses.length > 0">
+    No courses yet
+</div>  -->
+
+<!-- ngSwitchCase example -->
+<!-- <ul class="nav navpills">
+    <li [class.active]="viewMode == 'map'"><a (click)="viewMode = 'map'">Map View</a>
+     </li>
+    <li [class.active]="viewMode == 'list'" ><a (click)="viewMode = 'list'">List View</a>
+     </li>
+</ul>
+<div [ngSwitch]="viewMode">
+    <div *ngSwitchCase="'map'">Map View Content</div>
+    <div *ngSwitchCase="'list'">List View Content</div>
+    <div *ngSwitchDefault>Otherwise</div>
+</div> -->
+
+<!-- ngFor example -->
+<!-- ngFor directives export a bunch of values that helps you to build certain features -->
+<!-- <ul>
+    <li *ngFor="let course of courses; index as i">
+     {{ i }} - {{ course.name }}
+    </li>
+</ul> -->
+<!-- <ul>
+    <li *ngFor="let course of courses; even as isEven">
+     {{ course.name }} <span *ngIf="isEven">(EVEN)</span>
+    </li>
+</ul> -->
+
+<!-- ngFor and change detection example -->
+<button type="button" (click)="onAdd()">Add</button>
+<ul>
+    <li *ngFor="let course of courses">
+        {{ course.name}}
+        <!-- <button type="button" (click)="onRemove(course)">Remove</button> -->
+        <button type="button" (click)="onChange(course)">Change</button>
+
+
+    </li>
+</ul>
+
+<!-- Assignment -->
+<!-- <zippy title="Shipping Details">
+    Shipping Details Content
+</zippy> -->
+

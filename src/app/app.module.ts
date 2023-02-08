@@ -6,12 +6,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoursesComponent } from './courses/courses.component';
 import { CoursesComponentHtmlComponent } from './courses.component.html/courses.component.html.component';
+import { LikeComponent } from './like/like.component';
+import { ZippyComponent } from './zippy/zippy.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CoursesComponent,
-    CoursesComponentHtmlComponent
+    CoursesComponentHtmlComponent,
+    LikeComponent,
+    ZippyComponent
   ],
   imports: [
     BrowserModule,

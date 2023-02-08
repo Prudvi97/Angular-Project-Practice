@@ -38,8 +38,8 @@ email = "me@example.com"; //two way binding
 // }
 
 //Two way Binding
-// onKeyUp() {
-//   console.log(this.email);
-//   }
+onKeyUp() {
+  console.log(this.email);
+  }
 
 }
