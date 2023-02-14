@@ -1,0 +1,26 @@
+<!-- It is a template driven form we will be applying directive to the input field and angular will create an control object associated with that input field-->
+<!-- angular by default applies a directive called ngForm -->
+<!-- ngModelGroup is used for nested complex structure -->
+<form #f="ngForm" (ngSubmit)="submit(f)">
+    <div ngModelGroup="contact">
+        <div class="form-group">
+            <label for="firstName">First Name</label>
+            <!-- if angular sees the #firstname="ngModel" it's going to set it's template variable to the ngModel directive that is applied on this input field and we can pass variable to log method -->
+            <!-- we can use required to the input field and angular uses this kind of validation -->
+            <!-- required,minlength,maxlength,pattern are multiple validation constraints, these are html5 attributes  -->
+            <input required minlength="3" maxlength="10" pattern="banana" ngModel name="firstName" id="firstName" #firstName="ngModel" (change)="log(firstName)" type="text" class="form-control">
+            <!-- we are using ngIf because if the first name is touched and not entering the name then we will dispaly error -->
+            <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">First Name is required</div>
+            <!-- <div class="alert alert-danger"  *ngIf="firstName.errors?.['required']">First Name is required</div> -->
+            <div class="alert alert-danger"  *ngIf="firstName.errors?.['minlength']">Name must be at least 3 characters long.</div>
+            <div class="alert alert-danger"  *ngIf="firstName.errors?.['pattern']">Name didnot match the pattern.</div>
+        
+        </div>
+    </div>
+
+<div class="form-group">
+    <label for="comment">Comment</label>
+<textarea ngModel name="comment" id="comment" cols="30" rows="10" class="form-control"></textarea>
+</div>
+<button class="btn btn-primary" [disabled]="!f.valid">Submit</button>
+</form>
